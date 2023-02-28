@@ -1,0 +1,16 @@
+export default {
+  'profile.fullName': 'Họ và tên',
+  'profile.userName': 'Tên đăng nhập',
+  'profile.phone': 'Số điện thoại',
+  'profile.internalComment': 'Ghi chú',
+  'profile.brand': 'Nhãn hiệu',
+  'profile.role': 'Vai trò',
+  'profile._password': 'Mật khẩu',
+  'profile.createDateTime': 'Ngày tạo',
+  'profile.isActive': 'Trạng thái hoạt động',
+  'profile.change.password.title': 'Thay đổi mật khẩu',
+  'profile.newPassword': 'Mật khẩu mới',
+  'profile.confirm.newPassword': 'Xác nhận mật khẩu mới',
+  'password.not.match': 'Mật khẩu không khớp',
+  'profile.name': 'Hồ sơ',
+};

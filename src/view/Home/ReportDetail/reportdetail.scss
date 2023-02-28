@@ -1,0 +1,59 @@
+.wrapper-all2 {
+    height: 100vh;
+    background: #1E1E2E;
+    padding-top: 40px;
+    padding-left: 80px;
+
+    .wrapper-cover {
+        height: 100vh;
+
+        .content-header {
+            color: #898996;
+            font-family: Montserrat;
+            display: flex;
+
+            .span {
+                color: #8E654B;
+            }
+
+
+        }
+
+        .big-title {
+            font-weight: 700;
+            color: white;
+            font-size: 36px;
+        }
+
+        .content-input {
+            padding-top: 10px;
+
+            .choose-options {
+                display: flex;
+
+                .small-title {
+                    padding-top: 10px;
+                    margin-right: 10px;
+                    color: white;
+                }
+
+                .month-dropdown {
+                    width: 200px;
+                    margin-right: 20px;
+
+                }
+
+                .all-date {
+                    width: 200px;
+
+                }
+            }
+        }
+
+        .table2 {
+            margin-top: 20px;
+            padding-right: 200px;
+        }
+
+    }
+}

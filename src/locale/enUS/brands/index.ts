@@ -1,0 +1,15 @@
+export default {
+  'brands.name': 'Brand management',
+  'brands.brandName': 'Brand name',
+  'brands.brandAddress': 'Brand address',
+  'brands.createdBy': 'Creator',
+  'brands.createDateTime': 'Date created',
+  'brands.internalComment': 'Note',
+  'brands.isActive': 'Active status',
+  'brands.action': 'Action',
+  'brands.create': 'Add brand',
+  'brands.update': 'Brand update',
+  'brands.information': 'Brand information',
+  'brands.delete': 'Delete brand',
+  'brands.content.delete': 'Are you sure you want to delete this brand?',
+};

@@ -1,0 +1,36 @@
+@import '../styles/variable.scss';
+@import '../styles/mixin.scss';
+
+.page-error {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--colorPrimaryLight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .img {
+    width: 45rem;
+    height: 39rem;
+  }
+
+  .wrapper__text {
+    color: #fff;
+    margin-left: 5rem;
+    .number {
+      font-weight: 600;
+      font-size: 6rem;
+    }
+    .des-1 {
+      font-size: 2rem;
+      margin-top: 1.25rem;
+    }
+    .des-2 {
+      font-size: 1.4rem;
+      margin-top: 0.75rem;
+    }
+    button {
+      margin-top: 2.5rem;
+    }
+  }
+}

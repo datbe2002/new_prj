@@ -1,0 +1,104 @@
+.wrapper-cover-all {
+    font-family: Montserrat;
+    background-color: #1E1E2E;
+    height: 100vh;
+
+    .wrapper {
+        .content-header {
+            color: #898996;
+            font-family: Montserrat;
+            display: flex;
+
+            .span {
+                color: #8E654B;
+            }
+
+
+        }
+
+        .big-title {
+            font-weight: 700;
+            color: white;
+            font-size: 36px;
+        }
+
+        .content-input {
+            display: flex;
+            justify-content: space-between;
+
+            .date-picker {
+                display: flex;
+
+                .small-title {
+                    color: white;
+                    font-weight: 400;
+                    font-size: 16px;
+                    padding-top: 33px;
+                    padding-right: 10px;
+                }
+            }
+
+            .searchX {
+                margin-top: 20px;
+                display: flex;
+                margin-bottom: 24px;
+
+                &__account-choose {
+                    width: 275px;
+                    margin-right: 24px;
+                }
+
+                &__account-column {
+                    width: 230px;
+
+                }
+
+                &__search-input {
+                    position: relative;
+                    margin-left: 300px;
+
+                    &__textfield {
+                        width: 665px;
+                        height: 48px;
+                        border-radius: 4px;
+                        background-color: #2B2B3F;
+                        border: none;
+                        padding-left: 20px;
+                        color: white;
+                    }
+
+                    &__textfield::placeholder {
+                        color: #727288;
+                    }
+
+                    &__search {
+                        top: 100px;
+                        right: 13px;
+                        bottom: 0;
+                        position: absolute;
+                        font-size: 30px;
+                    }
+                }
+
+            }
+        }
+
+        .content-table {
+            .content-title {
+                color: white;
+                margin-top: 20px;
+                font-size: 24px;
+                font-weight: 700;
+                font-family: Montserrat;
+                padding-bottom: 20px;
+            }
+
+            .tableXXX {
+                background-color: #2A2A3B;
+                border-radius: 8px;
+            }
+        }
+
+
+    }
+}

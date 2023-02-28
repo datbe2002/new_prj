@@ -1,0 +1,108 @@
+.wrapper-all {
+    font-family: Montserrat;
+    height: 100vh;
+    background-color: #1E1E2E;
+
+    .title {
+        padding-top: 5.5rem;
+        margin-left: 5.1rem;
+
+        .navigator {
+            display: flex;
+            color: #898996;
+
+            .span {
+                color: #8E654B;
+            }
+        }
+
+        .big-title {
+            color: #E5E5E5;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 48px;
+        }
+    }
+
+    .content-mid {
+        margin-top: 25px;
+
+        .left-block {
+            height: 723px;
+            padding-left: 5.1rem;
+
+            .content-input {
+                padding-right: 20px;
+
+                .small-title {
+                    color: white;
+                    font-weight: 700;
+                    font-size: 24px;
+                    font-family: Montserrat;
+                }
+
+                .contentX33 {
+                    display: flex;
+                    margin-bottom: 24px;
+                    margin-top: 20px;
+
+
+
+                    &__search-input {
+                        position: relative;
+                        margin-left: 300px;
+
+                        &__textfield {
+                            width: 665px;
+                            height: 48px;
+                            border-radius: 4px;
+                            background-color: #2B2B3F;
+                            border: none;
+                            padding-left: 20px;
+                            color: white;
+                        }
+
+                        &__textfield::placeholder {
+                            color: #727288;
+                        }
+
+                        &__search {
+                            top: 58px;
+                            left: 673px;
+                            position: absolute;
+                            font-size: 30px;
+                        }
+                    }
+
+                }
+
+
+            }
+
+        }
+
+        .right-block {
+
+            height: 723px;
+            margin-right: 155px;
+            margin-left: 15px;
+
+            .content {
+                .small-title {
+                    color: white;
+                    font-weight: 700;
+                    font-size: 24px;
+                    font-family: Montserrat;
+                }
+
+                .big-title {
+                    color: #FFAC69;
+                    font-weight: 700;
+                    font-size: 28px;
+                    font-family: Montserrat;
+                    margin-bottom: 58px;
+                }
+            }
+        }
+    }
+}

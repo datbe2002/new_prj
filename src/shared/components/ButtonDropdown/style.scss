@@ -1,0 +1,18 @@
+@import '../../../view/styles/variable';
+
+.wrapper_btn_dropdown {
+  button {
+    box-shadow: 0 3px 20px #0000000b;
+    border: none;
+    min-height: 4.2rem;
+    min-width: 4.2rem;
+  }
+}
+.dropdown_btn {
+  .ant-dropdown-menu-item {
+    // &:hover {
+    //   color: var(--colorTextLightSolid) !important;
+    //   background-color: var(--colorPrimaryLight) !important;
+    // }
+  }
+}

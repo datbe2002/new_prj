@@ -1,0 +1,38 @@
+$primary-font: 'Montserrat', sans-serif;
+
+
+.user_name {
+    color: white;
+    font-family: $primary-font;
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 80px;
+}
+
+.user_power {
+    color: #B65100;
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 14px;
+
+}
+
+.flag-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+.custom-input {
+    background-color: #1E1E2E;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

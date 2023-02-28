@@ -1,0 +1,25 @@
+.wrapper_action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-right: 0.8rem;
+  cursor: pointer;
+  .icon {
+    margin-right: 0.3rem;
+  }
+  // .text {
+  // }
+}
+.blue {
+  color: #2db7f5;
+}
+.red {
+  color: #f44336;
+}
+.grey {
+  color: #9e9e9e;
+}
+.green {
+  color: #87d068;
+}

@@ -1,0 +1,105 @@
+.ant-btn,
+button.ant-btn.normal-button,
+.ant-modal-confirm-btns button.ant-btn,
+button.ant-btn.cancel-button,
+.normal-button,
+.cancel-button {
+  min-width: 15rem;
+  min-height: 4.8rem;
+  border-radius: 0.8rem;
+  font-weight: bold;
+  font-size: $fs-2;
+  padding: 0;
+  transition: All 0.3s;
+  // border: 1px solid var(--colorPrimary);
+  box-shadow: none;
+  // background: var(--colorPrimary);
+  // color: var(--colorBgContainer);
+
+  // &:hover {
+  //   background: var(--colorBgContainer);
+  //   color: var(--colorPrimary);
+  //   border: 1px solid var(--colorPrimary);
+  // }
+
+  // &:focus {
+  //   outline: none;
+  // }
+}
+
+.delete-button {
+  // border: 1px solid var(--colorPrimary);
+  // color: var(--colorBgContainer);
+  // color: var(--colorPrimary);
+}
+
+button.ant-btn.disabled-button {
+  min-width: 15rem;
+  height: 4.8rem;
+  border-radius: 0.8rem;
+  font-weight: bold;
+  font-size: $fs-3;
+}
+
+button.ant-btn.bg-custom-button {
+  // background-color: var(--colorPrimary);
+  // color: var(--colorBgContainer);
+
+  // &:hover {
+  //   opacity: 0.8;
+  // }
+
+  transition: 0.2s;
+  font-weight: $font-weight-bold;
+  height: 4rem;
+  border: none;
+}
+
+.ant-btn,
+button.ant-btn.cancel-button,
+button.ant-btn.ant-btn-dangerous,
+.cancel-button {
+  // background: var(--colorBgContainer);
+  // color: var(--colorPrimary);
+
+  // &:hover {
+  //   background: var(--colorPrimary);
+  //   color: var(--colorBgContainer);
+  // }
+
+  // &:focus {
+  //   outline: none;
+  // }
+}
+
+.button-center__box {
+  text-align: center;
+  button {
+    &:first-child {
+      margin-right: 2rem;
+    }
+  }
+}
+
+.ant-modal-confirm .ant-modal-confirm-btns .ant-btn + .ant-btn {
+  // background: var(--colorPrimary);
+  // color: var(--colorBgContainer);
+
+  // &:hover {
+  //   background: var(--colorBgContainer);
+  //   color: var(--colorPrimary);
+  //   border: 1px solid var(--colorPrimary);
+  // }
+}
+
+.modal-delete-confirm
+  .ant-modal-content
+  .ant-modal-body
+  .ant-modal-confirm-btns
+  button:first-child {
+  // &:hover {
+  //   background: var(--colorPrimary);
+  //   color: var(--colorBgContainer);
+  //   border: 1px solid var(--colorPrimary);
+  // }
+}

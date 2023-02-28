@@ -1,0 +1,43 @@
+.label-select {
+  font-weight: $font-weight-medium;
+  font-size: $fs-2;
+  color: var(--colorPrimary);
+}
+
+.select-label-component {
+  .select-custom,
+  .ant-select,
+  .ant-select-single,
+  .ant-select:not(.ant-select-customize-input) {
+    .ant-select-selector {
+      background-color: var(--colorBgContainer);
+      min-height: 4.2rem;
+      border-radius: 6px;
+      border: 1px solid $color-table-border;
+
+      .ant-select-selection-item {
+        padding: 0.4rem 1rem;
+        margin-right: 2rem;
+      }
+
+      .ant-select-selection-placeholder {
+        padding: 0.5rem 0;
+      }
+    }
+
+    .ant-select-arrow {
+      margin-right: 1rem;
+      margin-top: 0;
+    }
+  }
+
+  .suffix-icon {
+    color: #1d519e;
+    margin-top: -0.5rem;
+  }
+
+  .ant-select-single .ant-select-selector .ant-select-selection-item,
+  .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+    line-height: 3.3rem;
+  }
+}

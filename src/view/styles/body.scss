@@ -1,0 +1,80 @@
+@import './variable';
+@import './mixin';
+@font-face {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-display: swap;
+  src: local('Roboto Regular'), local('Roboto-Regular'),
+    url('../../shared/assets/font/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-display: swap;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+    url('../../shared/assets/font/Roboto/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SigmarOne';
+  font-weight: normal;
+  font-display: swap;
+  src: local('SigmarOne Regular'), local('SigmarOne-Regular'),
+    url('../../shared/assets/font/SigmarOne/SigmarOne-Regular.ttf')
+      format('truetype');
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: normal;
+  // background-color: $color-background;
+  line-height: normal;
+}
+
+div#root {
+  height: 100%;
+  overflow: hidden;
+  width: 100vw;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: var(--colorTextSecondary);
+  transition: 0.2s;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.margin-select {
+  margin-right: 1vw;
+}
+.w-20 {
+  width: 20% !important;
+}
+.w-80 {
+  width: 80% !important;
+}
+.no-padding {
+  padding: 0rem !important;
+}
+.ant-row {
+  row-gap: 1rem !important;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.tox .tox-notification--warn,
+.tox .tox-notification--warning {
+  display: none;
+}

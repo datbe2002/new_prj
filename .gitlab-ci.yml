@@ -1,0 +1,177 @@
+image: registry.altamedia.vn/ravolution/ravolution-cms:ci
+
+stages:
+  - install
+  - build
+  - release
+  - deploy
+#docker build -t registry.altamedia.vn/ravolution/ravolution-cms .
+# install npm dependencies so it'll be cache in subsequent jobs
+# note: we can't do this in linting stage as in that stage, 2 jobs run concurrently and both need node_modules
+install_dependencies:
+  stage: install
+  script:
+    - echo  ${CI_REGISTRY_USER} ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
+    - yarn
+  cache:
+    key: ${CI_COMMIT_REF_SLUG} # only apply for current branch
+    paths:
+      - node_modules/
+    policy: pull-push
+  artifacts:
+    paths:
+      - "node_modules"
+    expire_in: "120 mins"
+    
+sonarqube-check:
+  stage: install
+  image: 
+    name: sonarsource/sonar-scanner-cli:latest
+    entrypoint: [""]
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+    GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script: 
+    - sonar-scanner
+  allow_failure: true
+  only:
+    - develop # or the name of your main branch
+  
+
+build_development:
+  dependencies:
+    - install_dependencies
+  environment:
+    name: development
+    url: https://cms-ravolution.dev.altasoftware.vn
+  stage: build
+  only:
+    - develop
+  script:
+    - cp $ENV_FILE .env
+    - npm run build
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build --tag $CI_REGISTRY_IMAGE:v-$CI_COMMIT_SHORT_SHA .
+    - docker push $CI_REGISTRY_IMAGE:v-$CI_COMMIT_SHORT_SHA
+    - docker tag $CI_REGISTRY_IMAGE:v-$CI_COMMIT_SHORT_SHA $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    - docker push $CI_REGISTRY_IMAGE:develop
+  artifacts:
+    paths:
+      - "dist"
+    expire_in: "120 mins"
+
+build_production:
+  dependencies:
+    - install_dependencies
+  environment:
+    name: production
+    url: https://ravolution-cms.altacloud.biz
+  stage: build
+  only:
+    - master
+  script:
+    - cp $ENV_FILE_PROD .env
+    - npm run build
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build --tag $CI_REGISTRY_IMAGE:p-$CI_COMMIT_SHORT_SHA .
+    - docker push $CI_REGISTRY_IMAGE:p-$CI_COMMIT_SHORT_SHA
+    - docker tag $CI_REGISTRY_IMAGE:p-$CI_COMMIT_SHORT_SHA $CI_REGISTRY_IMAGE:latest
+    - docker push $CI_REGISTRY_IMAGE:latest
+  artifacts:
+    paths:
+      - "dist"  
+    expire_in: "120 mins"
+
+
+
+deploy_development:
+  dependencies: []
+  stage: deploy
+  cache: {}
+  environment:
+    name: development
+    url: https://cms-ravolution.dev.altasoftware.vn
+  tags:
+    - kcn-dev
+  variables:
+    # We do not need the source code here. Just playing with Docker.
+    GIT_STRATEGY: none
+  only:
+    - develop
+  before_script:
+    - apk update && apk add openssh-client bash
+  script:
+    # chạy ssh-agent tương ứng với Gitlab Runner hiện tại
+    - eval $(ssh-agent -s)
+
+    # thêm nội dung của biến SSH_PRIVATE_KEY vào agent store
+    - bash -c 'ssh-add <(echo "$SSH_PRIVATE_KEY")'
+    
+    # tạo folder ~/.ssh
+    - mkdir -p ~/.ssh
+    
+    # Scan lấy SSH Host key cho địa chỉ IP server
+    # Được kết quả bao nhiêu thì thêm vào file known_hosts
+    - ssh-keyscan -H $SSH_SERVER_IP >> ~/.ssh/known_hosts
+    
+    # Sửa lại quyền của file known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    
+    # Thực hiện SSH vào server, login vào Registry, chuyển tới folder project
+    # Down project, pull image về, up project và xoá đi image cũ
+    - >
+      ssh $SSH_USER@$SSH_SERVER_IP
+      "docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY};
+      cd ${PATH_TO_PROJECT};
+      docker-compose down;
+      docker pull ${CI_REGISTRY_IMAGE}:develop;
+      docker-compose up -d;
+      docker image prune -f;"
+
+deploy_production:
+  dependencies: []
+  stage: deploy
+  cache: {}
+  environment:
+    name: production
+    url: https://ravolution-cms.altacloud.biz
+  tags:
+    - kcn
+  variables:
+    # We do not need the source code here. Just playing with Docker.
+    GIT_STRATEGY: none
+  only:
+    - master
+  before_script:
+    - apk update && apk add openssh-client bash
+  script:
+    # chạy ssh-agent tương ứng với Gitlab Runner hiện tại
+    - eval $(ssh-agent -s)
+
+    # thêm nội dung của biến SSH_PRIVATE_KEY vào agent store
+    - bash -c 'ssh-add <(echo "$SSH_PRIVATE_KEY")'
+    
+    # tạo folder ~/.ssh
+    - mkdir -p ~/.ssh
+    
+    # Scan lấy SSH Host key cho địa chỉ IP server
+    # Được kết quả bao nhiêu thì thêm vào file known_hosts
+    - ssh-keyscan -H $SSH_SERVER_IP_PROD >> ~/.ssh/known_hosts
+    
+    # Sửa lại quyền của file known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    
+    # Thực hiện SSH vào server, login vào Registry, chuyển tới folder project
+    # Down project, pull image về, up project và xoá đi image cũ
+    - >
+      ssh $SSH_USER@$SSH_SERVER_IP_PROD
+      "docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY};
+      cd ${PATH_TO_PROJECT};
+      docker-compose down;
+      docker pull ${CI_REGISTRY_IMAGE}:latest;
+      docker-compose up -d;
+      docker image prune -f;"

@@ -1,0 +1,112 @@
+.forgot-password {
+  background-color: #1e1e2e;
+  box-sizing: border-box;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 24px;
+  padding-bottom: 52px;
+}
+.forgot-password .forgot-password-title {
+  margin-top: 36px;
+  margin-bottom: 0;
+}
+.forgot-password .forgot-password-description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.002em;
+  color: #f5f5ff;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.forgot-password .forgot-password-email-form {
+  display: flex;
+  justify-content: center;
+  form {
+    width: 600px;
+  }
+  label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.002em;
+    color: #f5f5ff;
+    margin-bottom: 8px;
+  }
+  input {
+    background-color: #2b2b3f;
+    border-color: 1px solid #727288;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #f5f5ff;
+    letter-spacing: -0.002em;
+    height: 48px;
+    :focus {
+      border-color: #347aff;
+      background-color: #2b2b3f;
+    }
+    :hover {
+      border-color: #347aff;
+      background-color: #2b2b3f;
+    }
+  }
+  .ant-input:focus,
+  .ant-input:hover,
+  .ant-input-focused {
+    border-color: #347aff;
+    background-color: #2b2b3f;
+  }
+  .ant-form-item-explain-error {
+    text-align: start;
+    margin-left: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .normal-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    .ant-btn {
+      min-width: 208px;
+      min-height: 56px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0.005em;
+      background-color: #ff7506;
+      border-color: transparent;
+      color: #f5f5ff;
+    }
+
+    .ant-btn:hover {
+      background-color: #d06106;
+    }
+  }
+  .error-status {
+    display: flex;
+    flex-direction: row;
+    color: #ff4747;
+    p {
+      margin: 0;
+      margin-left: 0.5rem;
+    }
+  }
+}
+.forgot-password-status {
+  display: flex;
+  justify-content: center;
+
+  p {
+    font-weight: 300;
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.002em;
+    width: 690px;
+  }
+}
+

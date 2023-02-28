@@ -1,0 +1,191 @@
+.login {
+  background-color: #1e1e2e;
+  box-sizing: border-box;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 24px;
+  padding-bottom: 52px;
+}
+.language {
+    margin-bottom: 52px;
+  }
+  
+  .select-language {
+    display: inline-flex;
+    margin-right: 80px;
+    background-color: transparent;
+    border: 1px solid #c8c8db;
+    border-radius: 4px;
+  }
+  .select-language .ant-select-selector {
+    background: transparent;
+    background-color: transparent !important;
+    border: none !important;
+    color: white;
+  }
+  .select-language .ant-select-arrow {
+    color: white;
+  }
+  .logo {
+    max-width: 240px;
+    max-height: 240px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+  .login-title,
+  .forgot-password-title {
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -0.002em;
+  }
+  #login-form .ant-form-item-label {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  #login-form .ant-form-item-required {
+    min-width: 472px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.002em;
+    opacity: 0.7;
+    color: white;
+  }
+  #login-form .ant-form-item-required::before,
+  #login-form .ant-form-item-required::after {
+    content: '';
+  }
+  
+  #login-form .ant-form-item-control-input {
+    justify-content: center;
+    margin: auto;
+  }
+  #login-form .ant-form-item-control-input-content {
+    min-width: 472px;
+  }
+  #login-form .ant-input {
+    background-color: #2b2b3f;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.002em;
+    color: #f5f5ff;
+    border-color: transparent;
+  }
+  #login-form .ant-input-password {
+    background-color: #2b2b3f;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.002em;
+    color: #f5f5ff;
+    border-color: #727288;
+  }
+  #login-form span.ant-input-affix-wrapper.ant-input-password,
+  .login-username {
+    height: 48px;
+  }
+  .login-username.ant-input-status-success {
+    background-color: #2b2b3f;
+    border-color: transparent;
+  }
+  #login-form .login-username:hover,
+  #login-form .login-username:focus {
+    border-color: #347aff;
+  }
+  .login-password .ant-input:hover .login-password,
+  .login-password .ant-input:focus .login-password,
+  .login-password:hover,
+  .login-password:focus,
+  .ant-input-affix-wrapper-focused {
+    border: 1px solid #347aff !important ;
+  }
+  .login-password .anticon.ant-input-password-icon {
+    color: #ff7506;
+  }
+  .error-input {
+    border: 1px solid #ff4747 !important;
+  }
+  #login-form .error-message-wrapper {
+    display: flex;
+    width: 472px;
+    margin: auto;
+    margin-bottom: 24px;
+  }
+  #login-form .error-message {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.002em;
+    color: #ff4747;
+  }
+  .ant-form-item-explain-error {
+    text-align: start;
+    width: 472px;
+    margin: auto;
+  }
+  .remember-checkbox {
+    .ant-checkbox-input,
+    .ant-checkbox-inner {
+      border: 1px solid #347aff !important;
+      background-color: transparent !important;
+      min-width: 24px;
+      min-height: 24px;
+    }
+    .ant-checkbox-checked .ant-checkbox-inner {
+      background-color: #347aff !important;
+    }
+    .ant-checkbox .ant-checkbox-inner:after {
+      top: 45%;
+      inset-inline-start: 24.5%;
+      width: 7.142857142857135px;
+      height: 11.142857142857142px;
+    }
+    .ant-checkbox + span {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.002em;
+    }
+  }
+  
+  .login-btn-item {
+    .ant-form-item-control-input-content {
+      min-width: 472px;
+      text-align: center;
+    }
+    .ant-btn {
+      min-width: 208px;
+      min-height: 56px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0.005em;
+      background-color: #ff7506;
+    }
+    .ant-btn:hover,
+    .ant-btn:focus {
+      background-color: #d06106;
+    }
+  }
+  .forgot-password-link .ant-form-item-control-input-content {
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 205px;
+    text-decoration-line: underline;
+    cursor: pointer;
+    a {
+      color: #ff7506;
+    }
+  }

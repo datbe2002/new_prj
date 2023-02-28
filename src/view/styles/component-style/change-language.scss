@@ -1,0 +1,34 @@
+.language-icon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 5px;
+}
+
+.select-language {
+  border-radius: 0.8rem;
+  .ant-select {
+    border-radius: 0.8rem;
+  }
+  .ant-select-selector {
+    border-radius: 0.8rem;
+  }
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-radius: 0.8rem;
+  }
+  .ant-select-arrow {
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0;
+  }
+
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-item {
+    padding-right: 2rem;
+  }
+  .ant-select-selection-item {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    height: 3.5rem;
+  }
+}

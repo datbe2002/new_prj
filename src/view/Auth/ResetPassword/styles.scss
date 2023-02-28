@@ -1,0 +1,131 @@
+.reset-password {
+  background-color: #1e1e2e;
+  box-sizing: border-box;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 24px;
+  padding-bottom: 52px;
+}
+.reset-password .reset-password-title {
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.002em;
+}
+.reset-password .reset-password-form {
+  .ant-form-item-label {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  .ant-form-item-required {
+    min-width: 472px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.002em;
+    opacity: 0.7;
+    color: white;
+  }
+  .ant-form-item-required::before,
+  .ant-form-item-required::after {
+    content: '';
+  }
+  .ant-form-item-control-input {
+    justify-content: center;
+    margin: auto;
+  }
+  .ant-form-item-control-input-content {
+    min-width: 472px;
+  }
+  .ant-input-password {
+    height: 48px;
+    background-color: #2b2b3f;
+    border-color: #727288;
+  }
+  .ant-input {
+    background-color: #2b2b3f;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.002em;
+    color: #f5f5ff;
+  }
+  .ant-form-item .ant-form-item-explain-error {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .anticon.ant-input-password-icon {
+    color: #ff7506;
+  }
+  .normal-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    .ant-btn {
+      min-width: 208px;
+      min-height: 56px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0.005em;
+      background-color: #ff7506;
+      border-color: transparent;
+      color: #f5f5ff;
+    }
+
+    :hover {
+      background-color: #d06106;
+    }
+  }
+}
+.reset-password .reset-password-status {
+  display: flex;
+  justify-content: center;
+  p {
+    font-weight: 300;
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.002em;
+    width: 585px;
+  }
+}
+.reset-password .sent-link-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  .ant-btn {
+    min-width: 220px;
+    min-height: 56px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.005em;
+    background-color: transparent;
+    border: 1px solid #ff7506;
+    color: #ff7506;
+  }
+
+  .ant-btn:hover {
+    background-color: #d06106;
+    color: #f5f5ff;
+  }
+}
+.return-login-link {
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 300px;
+  text-decoration-line: underline;
+  cursor: pointer;
+  a {
+    color: #ff7506;
+  }
+}

@@ -1,0 +1,17 @@
+.main-title {
+  font-weight: bold;
+  font-size: $fs-7;
+  color: var(--colorPrimary);
+  margin: 0;
+  line-height: 3rem;
+  .ant-typography {
+    font-size: $fs-2 !important;
+  }
+}
+
+.secondary-title {
+  font-size: $fs-5;
+  color: var(--colorTextLightSolid);
+  font-weight: $font-weight-bold;
+  margin-top: 1rem;
+}
